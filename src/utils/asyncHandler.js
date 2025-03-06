@@ -1,7 +1,7 @@
 import { error } from "console"
 
 const asyncHandler = (requestHandler)=> {
-    (req,res,next)=>{
+     return (req,res,next)=>{                                            //forgot to return
         Promise.resolve(requestHandler(req,res,next))
         .catch((error)=>next(error))
     }
